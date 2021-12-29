@@ -1,5 +1,7 @@
-FROM 7.4-fpm-alpine3.15
+FROM php:7.4-fpm-alpine
 RUN apk add --no-cache shadow
+RUN docker-php-ext-install pdo pdo_mysql
+RUN apk add
 
 WORKDIR /var/www
 RUN rm -rf /var/www/html
